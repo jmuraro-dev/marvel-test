@@ -1,28 +1,16 @@
 import React, {Component} from 'react';
 
-import './ComicCard.css'
+import './ComicCard.scss'
+
+import UilArrowRight from '@iconscout/react-unicons/icons/uil-arrow-right'
 
 class ComicCard extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    animateOver = () => {
-        document.getElementsByClassName('card__image')[this.props.id].style.filter = 'grayscale(100%)'
-        document.getElementsByClassName('card__content')[this.props.id].style.transform = 'translateY(0px)'
-    }
-
-    animateOut = () => {
-        document.getElementsByClassName('card__image')[this.props.id].style.filter = 'grayscale(0%)'
-        document.getElementsByClassName('card__content')[this.props.id].style.transform = 'translateY(200px)'
-    }
-
     render() {
         const {title, description, thumbnail} = this.props
 
         return (
             <div className="card__container">
-                <div className="card" onMouseOver={this.animateOver} onMouseOut={this.animateOut}>
+                <div className="card">
                     <img className="card__image" src={thumbnail.path + '/portrait_incredible.' + thumbnail.extension}></img>
                     <div className="card__content">
                         <h2 className="card__title">{title}</h2>
@@ -30,6 +18,13 @@ class ComicCard extends Component {
                         <p>
                             {description != null ? description.substr(0, 125) + '\u2026' : null}
                         </p>
+
+                        <span className="card__button">
+                            <span className="button__flex button__link card__button__link">
+                                View more
+                                <UilArrowRight className="button__icon" />
+                            </span>
+                        </span>
                     </div>
                 </div>
             </div>
