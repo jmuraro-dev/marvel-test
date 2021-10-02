@@ -4,6 +4,10 @@
 $header-height: 5rem;
 $footer-height: 3rem;
 
+body {
+  background-color: $body-color;
+}
+
 .container {
   margin: $header-height 1rem $footer-height 1rem;
   font-family: $body-font;

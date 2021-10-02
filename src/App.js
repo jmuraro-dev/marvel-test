@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {
     BrowserRouter as Router,
     Route,
+    Redirect,
     Switch
 } from "react-router-dom";
 
@@ -19,12 +20,16 @@ class App extends Component {
                         <HomeScreen />
                     )} />
 
-                    <Route path="/:comic" render={() => (
+                    <Route path="/comics/:comic" render={() => (
                         <InformationScreen />
                     )} />
 
-                    <Route path="*">
+                    <Route path="/404">
                         <NoScreen />
+                    </Route>
+
+                    <Route path="*">
+                        <Redirect to="/404" />
                     </Route>
                 </Switch>
             </Router>
