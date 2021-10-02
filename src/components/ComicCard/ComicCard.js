@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import './ComicCard.scss'
+import '../../assets/styles/shared.scss'
 
 import UilArrowRight from '@iconscout/react-unicons/icons/uil-arrow-right'
 
@@ -20,7 +21,7 @@ class ComicCard extends Component {
                         </p>
 
                         <span className="card__button">
-                            <span className="button__flex button__link card__button__link">
+                            <span className="button__flex button__link">
                                 View more
                                 <UilArrowRight className="button__icon" />
                             </span>
