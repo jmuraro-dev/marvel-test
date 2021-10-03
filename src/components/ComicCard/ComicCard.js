@@ -12,7 +12,7 @@ class ComicCard extends Component {
         return (
             <div className="card__container">
                 <div className="card">
-                    <img className="card__image" src={thumbnail.path + '/portrait_incredible.' + thumbnail.extension}></img>
+                    <img className="card__image" src={thumbnail.path + '/portrait_incredible.' + thumbnail.extension} alt={title}></img>
                     <div className="card__content">
                         <h2 className="card__title">{title}</h2>
                         <hr />

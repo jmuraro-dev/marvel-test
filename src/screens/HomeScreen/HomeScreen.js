@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 import '../../assets/styles/shared.scss';
-import './HomeScreen.scss';
 
 import ComicCard from "../../components/ComicCard";
 import {getComics} from "../../api/Comics";
@@ -24,7 +23,7 @@ class HomeScreen extends Component {
     render() {
         return (
             <div className="container">
-                {this.state.comics.length != 0 ? this.state.comics.map((comic, key) => (
+                {this.state.comics.length !== 0 ? this.state.comics.map((comic, key) => (
                     <ComicCard key={key} title={comic.title} description={comic.description} thumbnail={comic.thumbnail} />
                 )) : null}
             </div>
