@@ -1,8 +1,8 @@
 .information__container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 1rem;
+  grid-template-columns: calc(100% - 236px) 216px;
+  column-gap: 20px;
 }
 
 .information__image {
@@ -15,4 +15,35 @@
 
 .information__image:hover img {
   transform: scale(1.15);
+}
+
+@media screen and (max-width: 960px) {
+  .information__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 666px) {
+  .information__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100%);
+    column-gap: 20px;
+  }
+
+  .information__content {
+    order: 2;
+  }
+
+  .information__image {
+    order: 1;
+    text-align: center;
+  }
+
+  .information__image img {
+    width: 130px;
+  }
 }

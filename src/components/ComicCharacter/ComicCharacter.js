@@ -8,11 +8,13 @@ class ComicCharacter extends Component {
 
         return (
             <div className="character__container">
-                <div className="character__image">
-                    <img className="character__img" src={thumbnail.path + '/standard_large.' + thumbnail.extension} alt={name} />
-                </div>
-                <div className="character__content">
-                    <h2 className="character__name">{name}</h2>
+                <div className="character__card">
+                    <div className="character__image">
+                        <img className="character__img" src={thumbnail.path + '/standard_large.' + thumbnail.extension} alt={name} />
+                    </div>
+                    <div className="character__content">
+                        <h2 className="character__name">{name}</h2>
+                    </div>
                 </div>
             </div>
         );
