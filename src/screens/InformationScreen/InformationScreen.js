@@ -41,15 +41,15 @@ class InformationScreen extends Component {
             return (<h1>Loading data</h1>)
         } else {
             const {comic, characters} = this.state
-
+            console.log(characters)
             return (
                 <div className="container" style={{gridTemplateColumns: 'repeat(auto-fill, 75%)'}}>
                     <ComicInformation comic={comic}/>
 
                     {
-                        characters.available === 0 ?
+                        characters.length === 0 ?
                             null :
-                            <h3>{characters.available > 1 ? 'Characters' : 'Character'} on this
+                            <h3>{characters.length > 1 ? 'Characters' : 'Character'} on this
                                 comic</h3>
                     }
 
