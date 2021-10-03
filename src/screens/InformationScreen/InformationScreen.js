@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import '../../assets/styles/shared.scss'
+import './InformationScreen.scss'
 
 import {withRouter, Redirect} from 'react-router-dom';
 
@@ -9,6 +10,7 @@ import {getCharacter} from "../../api/Characters";
 
 import ComicInformation from "../../components/ComicInformation";
 import ComicCharacter from "../../components/ComicCharacter";
+import UilAngleLeft from "@iconscout/react-unicons/icons/uil-angle-left";
 
 class InformationScreen extends Component {
     constructor(props) {
@@ -41,9 +43,14 @@ class InformationScreen extends Component {
             return (<h1>Loading data</h1>)
         } else {
             const {comic, characters} = this.state
-            console.log(characters)
+
             return (
-                <div className="container" style={{gridTemplateColumns: 'repeat(auto-fill, 75%)'}}>
+                <div className="container information__screen__container">
+                    <a onClick={() => this.props.history.push('/')} className="button button__flex button__small back__button">
+                        <UilAngleLeft className="button__icon" />
+                        Back
+                    </a>
+
                     <ComicInformation comic={comic}/>
 
                     {
@@ -52,14 +59,15 @@ class InformationScreen extends Component {
                             <h3>{characters.length > 1 ? 'Characters' : 'Character'} on this
                                 comic</h3>
                     }
-
-                    {
-                        characters.available === 0 ?
-                            null :
-                            characters.map((character, key) => (
-                                <ComicCharacter character={character}/>
-                            ))
-                    }
+                    <div className="information__character" style={{display: "grid", gridTemplateColumns: 'repeat(auto-fill, 145px)', columnGap: '20px', rowGap: '20px'}}>
+                        {
+                            characters.available === 0 ?
+                                null :
+                                characters.map((character, key) => (
+                                    <ComicCharacter character={character}/>
+                                ))
+                        }
+                    </div>
                 </div>
             );
         }

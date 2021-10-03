@@ -1,0 +1,54 @@
+@import "src/assets/styles/fonts";
+@import "src/assets/styles/colors";
+
+.information__screen__container {
+  grid-template-columns: repeat(auto-fill, 75%);
+  row-gap: 10px;
+}
+
+.information__character {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 145px);
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.button {
+  display: flex;
+  background-color: $first-color;
+  color: #FFF;
+  padding: 5px;
+  border-radius: .5rem;
+  font-weight: $font-medium;
+  width: 100px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: $first-color-alt;
+}
+
+.button__icon {
+  font-size: 1.25rem;
+  margin-left: .5rem;
+  transition: .3s;
+}
+
+.button--flex {
+  display: inline-flex;
+  align-items: center;
+}
+
+.button--small {
+  padding: .75rem 1rem;
+}
+
+.button__icon {
+  font-size: 1.25rem;
+  margin-left: .5rem;
+  transition: .3s;
+}
+
+.back__button:hover .button__icon {
+  transform: translateX(-.25rem);
+}
