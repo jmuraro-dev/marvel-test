@@ -24,7 +24,7 @@ class HomeScreen extends Component {
         return (
             <div className="container">
                 {this.state.comics.length !== 0 ? this.state.comics.map((comic, key) => (
-                    <ComicCard key={key} title={comic.title} description={comic.description} thumbnail={comic.thumbnail} />
+                    <ComicCard key={key} id={comic.id} title={comic.title} description={comic.description} thumbnail={comic.thumbnail} />
                 )) : null}
             </div>
         );

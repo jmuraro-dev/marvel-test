@@ -1,13 +1,18 @@
-import React, {Component} from 'react';
-
 import './ComicCard.scss'
 import '../../assets/styles/shared.scss'
 
+import { useHistory } from "react-router-dom";
+
 import UilArrowRight from '@iconscout/react-unicons/icons/uil-arrow-right'
 
-class ComicCard extends Component {
-    render() {
-        const {title, description, thumbnail} = this.props
+function ComicCard(props) {
+        const {title, description, thumbnail} = props
+        const history = useHistory()
+
+        const redirect = () => {
+            let path = '/comics/' + props.id;
+            history.push(path);
+        }
 
         return (
             <div className="card__container">
@@ -21,7 +26,7 @@ class ComicCard extends Component {
                         </p>
 
                         <span className="card__button">
-                            <span className="button__flex button__link">
+                            <span className="button__flex button__link" onClick={redirect}>
                                 View more
                                 <UilArrowRight className="button__icon" />
                             </span>
@@ -30,7 +35,6 @@ class ComicCard extends Component {
                 </div>
             </div>
         );
-    }
 }
 
 export default ComicCard;
