@@ -1,6 +1,18 @@
 .information__container {
-  width: 100vh;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 1rem;
+}
+
+.information__image {
+  overflow: hidden;
+}
+
+.information__image img {
+  transition: transform .5s ease;
+}
+
+.information__image:hover img {
+  transform: scale(1.15);
 }

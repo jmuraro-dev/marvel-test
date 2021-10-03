@@ -29,38 +29,40 @@ class InformationScreen extends Component {
             this.setState({error404: true})
         } else {
             const characters = []
-
             for (const character of comic.characters.items) { characters.push(await getCharacter(character.resourceURI)) }
-
             await this.setState({comic, characters, loading: false})
         }
     }
 
     render() {
         if (this.state.error404) {
-            return <Redirect to='/404' />
-        } else if (this.state.loading)
+            return <Redirect to='/404'/>
+        } else if (this.state.loading) {
             return (<h1>Loading data</h1>)
-        else
+        } else {
+            const {comic, characters} = this.state
+
             return (
-                <div className="container" style={{'grid-template-columns': 'repeat(auto-fill, 75%)'}}>
-                    <ComicInformation comic={this.state.comic}/>
+                <div className="container" style={{gridTemplateColumns: 'repeat(auto-fill, 75%)'}}>
+                    <ComicInformation comic={comic}/>
 
                     {
-                        this.state.comic.characters.available === 0 ?
-                        null :
-                        <h2>Characters on this comic</h2>
+                        characters.available === 0 ?
+                            null :
+                            <h3>{characters.available > 1 ? 'Characters' : 'Character'} on this
+                                comic</h3>
                     }
 
                     {
-                        this.state.comic.characters.available === 0 ?
-                        null :
-                        this.state.characters.map((character, key) => (
-                            <ComicCharacter character={character} />
-                        ))
+                        characters.available === 0 ?
+                            null :
+                            characters.map((character, key) => (
+                                <ComicCharacter character={character}/>
+                            ))
                     }
                 </div>
             );
+        }
     }
 }
 
