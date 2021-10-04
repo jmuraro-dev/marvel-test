@@ -11,7 +11,8 @@ body {
 
 .container {
   position: relative;
-  margin: calc(#{$header-height} + 2rem) 1rem calc(#{$footer-height} + 2rem) 1rem;
+  min-height: calc(100vh - #{$footer-height} - 194px);
+  padding: calc(#{$header-height} + 2rem) 1rem calc(#{$footer-height} + 2rem) 1rem;
   font-family: $body-font;
   font-size: $normal-font-size;
   background-color: $body-font;
@@ -50,6 +51,6 @@ hr {
   $header-height: 3rem;
 
   .container {
-    margin: calc(#{$header-height} + 2rem) 1rem calc(#{$footer-height} + 2rem) 1rem;
+    padding: calc(#{$header-height} + 1rem) 1rem calc(#{$footer-height} + 1rem) 1rem;
   }
 }
