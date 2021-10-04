@@ -56,10 +56,10 @@ class InformationScreen extends Component {
                     {
                         characters.length === 0 ?
                             null :
-                            <h3>{characters.length > 1 ? 'Characters' : 'Character'} on this
-                                comic</h3>
+                            <h3>{characters.length > 1 ? 'Characters' : 'Character'} on this comic</h3>
                     }
-                    <div className="information__character" style={{display: "grid", gridTemplateColumns: 'repeat(auto-fill, 145px)', columnGap: '20px', rowGap: '20px'}}>
+
+                    <div className="information__character">
                         {
                             characters.available === 0 ?
                                 null :

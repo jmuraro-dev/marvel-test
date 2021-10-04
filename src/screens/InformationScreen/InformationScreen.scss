@@ -52,3 +52,15 @@
 .back__button:hover .button__icon {
   transform: translateX(-.25rem);
 }
+
+@media screen and (max-width: 960px) {
+  .information__screen__container h3 {
+    text-align: center;
+  }
+
+  .information__character {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
