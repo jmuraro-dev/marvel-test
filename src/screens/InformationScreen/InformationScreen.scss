@@ -41,7 +41,7 @@
 }
 
 .button__small {
-  padding: .75rem 1rem;
+  padding: .2rem .2rem;
 }
 
 .button__icon {
@@ -54,7 +54,7 @@
   transform: translateX(-.25rem);
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 350px) {
   .information__screen__container h3 {
     text-align: center;
   }
