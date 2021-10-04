@@ -47,10 +47,10 @@ class InformationScreen extends Component {
 
             return (
                 <div className="container information__screen__container">
-                    <a onClick={() => this.props.history.push('/')} className="button button__flex button__small back__button">
+                    <button onClick={() => this.props.history.push('/')} className="button button__flex button__small back__button">
                         <UilAngleLeft className="button__icon" />
                         Back
-                    </a>
+                    </button>
 
                     <ComicInformation comic={comic}/>
 

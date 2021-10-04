@@ -50,6 +50,10 @@
   transition: .3s;
 }
 
+.back__button {
+  border: none;
+}
+
 .back__button:hover .button__icon {
   transform: translateX(-.25rem);
 }
