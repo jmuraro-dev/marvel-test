@@ -10,7 +10,7 @@ To do this, you just need to run the command below :
 
 ### `npm install`
 
-In order to properly launch the project, you will need to fill in the .config file with the information needed to use the Marvel API.
+In order to properly launch the project, you will need to fill in the "/src/api/config.js" file with the information needed to use the Marvel API.
 You can have more information about this API by following this link : [https://developer.marvel.com](https://developer.marvel.com).
 
 When the setup is finished you can run the app localy.
