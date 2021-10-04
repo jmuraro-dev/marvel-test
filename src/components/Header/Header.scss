@@ -1,0 +1,54 @@
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/colors';
+
+.header {
+  height: 4rem;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  display: grid;
+
+  background-color: $header-color;
+}
+
+.header__title {
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+
+  margin-left: 20px;
+
+  position: absolute;
+  justify-self: flex-start;
+}
+
+.header__link {
+  color: $body-color;
+  font-size: $h1-font-size;
+  font-weight: bold;
+}
+
+.header__logo {
+  position: absolute;
+  justify-self: center;
+}
+
+.header__image {
+  height: 4rem;
+}
+
+@media screen and (max-width: 666px) {
+  .header { height: 3rem; }
+
+  .header__title { height: 3rem; }
+
+  .header__link { font-size: $normal-font-size }
+
+  .header__image { height: 3rem; }
+}

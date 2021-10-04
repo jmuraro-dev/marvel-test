@@ -10,11 +10,13 @@ import {
 import HomeScreen from "./screens/HomeScreen";
 import NoScreen from "./screens/NoScreen";
 import InformationScreen from "./screens/InformationScreen";
+import Header from "./components/Header";
 
 class App extends Component {
     render() {
         return (
             <Router>
+                <Header />
                 <Switch>
                     <Route exact path="/" render={() => (
                         <HomeScreen />
