@@ -21,7 +21,11 @@ class HomeScreen extends Component {
     }
 
     async componentDidMount() {
-        const comics = await getComics()
+        const min = Math.ceil(0)
+        const max = Math.floor(100)
+        const offset = Math.floor(Math.random() * (max - min)) + min
+
+        const comics = await getComics(offset)
         await this.setState({comics: comics.results, comicsTotal: comics.total, loading: false})
     }
 
