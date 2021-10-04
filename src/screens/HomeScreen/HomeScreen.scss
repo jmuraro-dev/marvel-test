@@ -1,0 +1,46 @@
+@import '../../assets/styles/colors';
+@import '../../assets/styles/fonts';
+
+.home__content {
+  margin-top: 30px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 216px);
+  column-gap: 20px;
+  grid-template-rows: 324px;
+  row-gap: 20px;
+}
+
+.button__random {
+  display: flex;
+  background-color: $first-color;
+  color: #FFF;
+  padding: 5px;
+  border-radius: .5rem;
+  font-weight: $font-semi-bold;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+
+.button__random:hover {
+  background-color: $first-color-alt;
+}
+
+.button__random__flex {
+  display: inline-flex;
+  align-items: center;
+}
+
+.button__random__icon {
+  font-size: .75rem;
+  margin-left: .5rem;
+  transition: .3s;
+}
+
+.random__button:hover .button__random__icon {
+  transform: translateX(.25rem);
+}
+
