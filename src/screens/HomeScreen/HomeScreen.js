@@ -46,9 +46,11 @@ class HomeScreen extends Component {
         } else {
             return (
                 <div className="container">
-                    <button onClick={this.getNewComics} className="button__random button__random__flex random__button">
-                        Other random comics
-                    </button>
+                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <button onClick={this.getNewComics} className="button__random button__random__flex random__button">
+                            Other random comics
+                        </button>
+                    </div>
 
                     <div className="home__content">
                         {this.state.comics.length !== 0 ? this.state.comics.map((comic, key) => (

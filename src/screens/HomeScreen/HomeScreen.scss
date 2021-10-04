@@ -2,13 +2,16 @@
 @import '../../assets/styles/fonts';
 
 .home__content {
-  margin-top: 30px;
+  margin-top: 10px;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, 216px);
   column-gap: 20px;
   grid-template-rows: 324px;
   row-gap: 20px;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .button__random {
@@ -19,6 +22,7 @@
   border-radius: .5rem;
   font-weight: $font-semi-bold;
   width: 200px;
+  height: 50px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
