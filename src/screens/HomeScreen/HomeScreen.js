@@ -4,9 +4,10 @@ import '../../assets/styles/shared.scss';
 import './HomeScreen.scss'
 
 import ComicCard from "../../components/ComicCard";
+import Loading from "../../components/Loading";
 
 import {getComics} from "../../api/Comics";
-import Loading from "../../components/Loading";
+import {Redirect} from "react-router-dom";
 
 class HomeScreen extends Component {
     constructor(props) {
@@ -15,7 +16,8 @@ class HomeScreen extends Component {
         this.state = {
             comics: [],
             comicsTotal: 0,
-            loading: true
+            loading: true,
+            error: false
         }
     }
 
@@ -25,7 +27,11 @@ class HomeScreen extends Component {
         const offset = Math.floor(Math.random() * (max - min)) + min
 
         const comics = await getComics(offset)
-        await this.setState({comics: comics.results, comicsTotal: comics.total, loading: false})
+
+        if (comics === null || comics === undefined)
+            this.setState({error: true})
+        else
+            await this.setState({comics: comics.results, comicsTotal: comics.total, loading: false})
     }
 
     getNewComics = async () => {
@@ -36,11 +42,21 @@ class HomeScreen extends Component {
         const offset = Math.floor(Math.random() * (max - min)) + min
 
         const comics = await getComics(offset)
-        await this.setState({comics: comics.results, comicsTotal: comics.total, loading: false})
+        if (comics === null)
+            this.setState({error: true})
+        else
+            await this.setState({comics: comics.results, comicsTotal: comics.total, loading: false})
     }
 
     render() {
-        if (this.state.loading) {
+        if (this.state.error) {
+            return (
+                <div className="container" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>
+                    Oops ! Something went wrong with the request. <br />
+                    Please verify the configuration
+                </div>
+            )
+        } else if (this.state.loading) {
             return (<Loading />)
         } else {
             return (

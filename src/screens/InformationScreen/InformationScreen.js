@@ -21,14 +21,17 @@ class InformationScreen extends Component {
             comic: null,
             characters: null,
             loading: true,
-            error404: false
+            error404: false,
+            error: false
         }
     }
 
     async componentDidMount() {
         let comic = await getComic(this.props.match.params.comic)
 
-        if (comic === 404) {
+        if (comic === null || comic === undefined)
+            this.setState({error: true})
+        else if (comic === 404) {
             this.setState({error404: true})
         } else {
             const characters = []
@@ -38,7 +41,14 @@ class InformationScreen extends Component {
     }
 
     render() {
-        if (this.state.error404) {
+        if (this.state.error) {
+            return (
+                <div className="container" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>
+                    Oops ! Something went wrong with the request. <br />
+                    Please verify the configuration
+                </div>
+            )
+        } else if (this.state.error404) {
             return <Redirect to='/404'/>
         } else if (this.state.loading) {
             return (<Loading />)
