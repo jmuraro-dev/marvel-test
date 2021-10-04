@@ -1,9 +1,20 @@
+import './NoScreen.scss'
+
 function NoScreen() {
     return (
-        <div>
-            <h3>
-                No page here. It seems Thanos was here and have delete all sign of life.
-            </h3>
+        <div className="container">
+            <div className="no__screen__container">
+                <h3 className="no__screen__title" style={{textAlign: 'center'}}>
+                    Oops ! <br /> Looks like Thanos has been there.
+                </h3>
+
+                <img className="no__screen__image" src="https://cdn140.picsart.com/305940572135211.png" alt="Thanos snap" />
+            </div>
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '50px'}}>
+                <button onClick={() => console.log("redirect")} className="button__random button__random__flex random__button">
+                    Go on homescreen
+                </button>
+            </div>
         </div>
     )
 }

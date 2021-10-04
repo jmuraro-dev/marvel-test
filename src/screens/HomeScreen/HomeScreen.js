@@ -4,10 +4,8 @@ import '../../assets/styles/shared.scss';
 import './HomeScreen.scss'
 
 import ComicCard from "../../components/ComicCard";
-import { UilArrowRandom } from "@iconscout/react-unicons/icons/uil-arrow-random"
 
 import {getComics} from "../../api/Comics";
-import UilAngleLeft from "@iconscout/react-unicons/icons/uil-arrow-random";
 
 class HomeScreen extends Component {
     constructor(props) {

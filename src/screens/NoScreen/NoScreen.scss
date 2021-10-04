@@ -1,0 +1,27 @@
+@import '../../assets/styles/fonts';
+
+.no__screen__container {
+  margin-top: 20px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.no__screen__title {
+  text-align: center;
+  font-size: $h1-font-size;
+  font-weight: $font-semi-bold;
+}
+
+.no__screen__image {
+  width: 460.5px;
+  height: 463px;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 666px) {
+  .no__screen__image {
+    height: 308.66px;
+    width: 307px;
+  }
+}
