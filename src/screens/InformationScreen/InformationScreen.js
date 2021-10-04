@@ -11,6 +11,7 @@ import {getCharacter} from "../../api/Characters";
 import ComicInformation from "../../components/ComicInformation";
 import ComicCharacter from "../../components/ComicCharacter";
 import UilAngleLeft from "@iconscout/react-unicons/icons/uil-angle-left";
+import Loading from "../../components/Loading";
 
 class InformationScreen extends Component {
     constructor(props) {
@@ -40,7 +41,7 @@ class InformationScreen extends Component {
         if (this.state.error404) {
             return <Redirect to='/404'/>
         } else if (this.state.loading) {
-            return (<h1>Loading data</h1>)
+            return (<Loading />)
         } else {
             const {comic, characters} = this.state
 

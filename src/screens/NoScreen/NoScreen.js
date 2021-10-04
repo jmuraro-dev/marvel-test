@@ -1,6 +1,10 @@
 import './NoScreen.scss'
 
-function NoScreen() {
+import { useHistory } from "react-router";
+
+function NoScreen(props) {
+    let history = useHistory()
+
     return (
         <div className="container">
             <div className="no__screen__container">
@@ -11,7 +15,7 @@ function NoScreen() {
                 <img className="no__screen__image" src="https://cdn140.picsart.com/305940572135211.png" alt="Thanos snap" />
             </div>
             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '50px'}}>
-                <button onClick={() => console.log("redirect")} className="button__random button__random__flex random__button">
+                <button onClick={() => history.push("/")} className="button__random button__random__flex random__button">
                     Go on homescreen
                 </button>
             </div>

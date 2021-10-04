@@ -6,6 +6,7 @@ import './HomeScreen.scss'
 import ComicCard from "../../components/ComicCard";
 
 import {getComics} from "../../api/Comics";
+import Loading from "../../components/Loading";
 
 class HomeScreen extends Component {
     constructor(props) {
@@ -40,11 +41,7 @@ class HomeScreen extends Component {
 
     render() {
         if (this.state.loading) {
-            return (
-                <div className="container">
-                    <h1>Loading data ...</h1>
-                </div>
-            )
+            return (<Loading />)
         } else {
             return (
                 <div className="container">
