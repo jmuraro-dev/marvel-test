@@ -2,6 +2,7 @@
 @import "src/assets/styles/colors";
 
 .information__screen__container {
+  display: inherit;
   grid-template-columns: repeat(auto-fill, 75%);
   row-gap: 10px;
 }
@@ -34,12 +35,12 @@
   transition: .3s;
 }
 
-.button--flex {
+.button__flex {
   display: inline-flex;
   align-items: center;
 }
 
-.button--small {
+.button__small {
   padding: .75rem 1rem;
 }
 

@@ -1,0 +1,17 @@
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/colors';
+
+.footer {
+  height: 3rem;
+  width: 100%;
+
+  padding-top: 2px;
+
+  background-color: $header-color;
+
+  text-align: center;
+}
+
+.footer__copy {
+  color: $text-color-light;
+}

@@ -11,6 +11,7 @@ import HomeScreen from "./screens/HomeScreen";
 import NoScreen from "./screens/NoScreen";
 import InformationScreen from "./screens/InformationScreen";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 class App extends Component {
     render() {
@@ -34,6 +35,7 @@ class App extends Component {
                         <Redirect to="/404" />
                     </Route>
                 </Switch>
+                <Footer />
             </Router>
         );
     }
